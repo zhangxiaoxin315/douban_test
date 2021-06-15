@@ -1,0 +1,25 @@
+---
+tests:
+- case: 验证电影详情是否正确-复仇者联盟
+  http:
+    method: GET
+    url: /api
+    headers:
+      User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36
+    params:
+      id: 1866479
+  expected:
+    response:
+      originalName: The Avengers
+
+- case: 验证电影详情是否正确-银河护卫队
+  http:
+    method: GET
+    url: /api
+    headers:
+      User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.149 Safari/537.36
+    params:
+      id: 7065154
+  expected:
+    response:
+      originalName: Guardians of the Galaxy
