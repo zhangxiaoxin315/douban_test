@@ -3,6 +3,8 @@
 import requests
 import pytest
 import sys,os
+import allure
+
 # curPath = os.path.abspath(os.path.dirname(__file__))
 # rootPath = os.path.split(curPath)[0]
 # sys.path.append(rootPath)
@@ -28,5 +30,6 @@ class TestMovieDetail(object):
         assert response['originalName'] == expected["response"]["originalName"]
 
 
-# if __name__ == '__main__':
-#     pytest.main(['test_movie_detail.py','-v'])
+if __name__ == '__main__':
+    pytest.main(['test_movie_detail.py','-vs','--alluredir','../report/tmp'])
+    os.system("allure serve ../report/tmp")
